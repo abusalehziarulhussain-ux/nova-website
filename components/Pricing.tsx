@@ -1,93 +1,56 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 
-const pricingPlans = [
+const testimonials = [
   {
-    name: 'Starter',
-    price: '$699',
-    period: '/ project',
-    description: 'Perfect for polishing your online presence.',
-    features: ['Landing page design', 'Messaging refinement', 'Responsive layout'],
-    featured: false,
+    quote:
+      'Ari translated a messy product story into a clear experience. The result felt premium, easier to understand, and far more convincing to customers.',
+    name: 'Maya Chen',
+    role: 'CEO, Northstar',
   },
   {
-    name: 'Growth',
-    price: '$1,800',
-    period: '/ project',
-    description: 'For teams that need a premium digital launch.',
-    features: ['Full website design', 'Brand positioning', 'Conversion optimization'],
-    featured: true,
+    quote:
+      'The design system was elegant, practical, and immediately useful. We shipped faster and our team finally had a common language for product decisions.',
+    name: 'Julian Brooks',
+    role: 'Product Lead, Pillar Labs',
   },
   {
-    name: 'Scale',
-    price: '$3,500',
-    period: '/ month',
-    description: 'Ongoing strategy, design, and performance support.',
-    features: ['Marketing funnel support', 'Weekly optimization', 'Creative strategy sprint'],
-    featured: false,
+    quote:
+      'From strategy to front-end implementation, everything felt considered. We saw stronger engagement and a clearer narrative almost immediately.',
+    name: 'Elena Ross',
+    role: 'Founder, Bloom Studio',
   },
 ];
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="section-shell">
+    <section id="testimonials" className="section-shell">
       <div className="container-shell">
-        <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <h2 className="text-4xl font-black tracking-[-0.06em] md:text-5xl">Simple pricing. Real momentum.</h2>
-          <p className="max-w-xl text-base leading-7 text-slate-300">
-            Choose a plan that matches your stage, then grow with expert strategy and execution behind you.
-          </p>
+        <div id="approach" className="mb-12 max-w-2xl">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Approach</p>
+          <h2 className="text-4xl font-black tracking-[-0.06em] text-stone-900 md:text-5xl">
+            Thoughtful systems, minimal noise, clear outcomes.
+          </h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {pricingPlans.map((plan, index) => (
-            <motion.article
-              key={plan.name}
+        <div className="grid gap-6 lg:grid-cols-3">
+          {testimonials.map((item, index) => (
+            <motion.blockquote
+              key={item.name}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.45, delay: index * 0.1 }}
-              className={`relative rounded-[28px] border p-7 ${
-                plan.featured
-                  ? 'border-blue/60 bg-gradient-to-b from-blue/10 to-white/[0.02] shadow-glow'
-                  : 'border-white/10 bg-white/[0.02]'
-              }`}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className="rounded-[28px] border border-stone-200 bg-white p-7 shadow-[0_12px_35px_rgba(0,0,0,0.04)]"
             >
-              {plan.featured && (
-                <div className="absolute right-6 top-6 rounded-full border border-blue/30 bg-blue/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">
-                  Most Popular
-                </div>
-              )}
-
-              <h3 className="mb-5 text-2xl font-semibold">{plan.name}</h3>
-              <div className="mb-3 flex items-end gap-2">
-                <span className="text-4xl font-black tracking-[-0.06em]">{plan.price}</span>
-                <span className="pb-1 text-sm text-slate-400">{plan.period}</span>
-              </div>
-              <p className="mb-6 text-slate-300">{plan.description}</p>
-
-              <ul className="space-y-3 text-white">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3">
-                    <span className="text-accent">✓</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Link
-                href="#contact"
-                className={`mt-8 inline-flex rounded-full px-5 py-3 font-semibold transition ${
-                  plan.featured
-                    ? 'bg-gradient-to-r from-blue to-accent text-[#08101d] shadow-glow'
-                    : 'border border-white/10 bg-white/[0.04] text-white hover:bg-white/[0.08]'
-                }`}
-              >
-                {plan.featured ? 'Book a Call' : 'Get Started'}
-              </Link>
-            </motion.article>
+              <div className="mb-5 text-3xl text-stone-900">“</div>
+              <p className="text-base leading-7 text-stone-600">{item.quote}</p>
+              <footer className="mt-6 border-t border-stone-200 pt-4">
+                <div className="font-semibold text-stone-900">{item.name}</div>
+                <div className="text-sm text-stone-500">{item.role}</div>
+              </footer>
+            </motion.blockquote>
           ))}
         </div>
       </div>

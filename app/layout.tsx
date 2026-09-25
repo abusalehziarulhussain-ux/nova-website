@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Nova Studio | Digital Brand Growth',
-  description: 'Modern agency website built with Next.js and Framer Motion.',
+  title: 'Ari Vale | Designer & Developer',
+  description: 'Portfolio website for a multidisciplinary designer and frontend developer.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

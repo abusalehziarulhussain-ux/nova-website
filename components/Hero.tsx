@@ -4,48 +4,47 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const stats = [
-  { value: '120+', label: 'projects launched' },
-  { value: '4.9/5', label: 'client satisfaction' },
-  { value: '3x', label: 'avg conversion lift' },
+  { value: '8+', label: 'years crafting interfaces' },
+  { value: '42', label: 'products shipped' },
+  { value: '96%', label: 'client retention rate' },
 ];
 
 export default function Hero() {
   return (
-    <section id="top" className="section-shell">
-      <div className="container-shell grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+    <section id="top" className="section-shell pt-16">
+      <div className="container-shell grid items-center gap-14 lg:grid-cols-[1.08fr_0.92fr]">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-2 text-xs text-slate-300">
-            <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_10px_rgba(110,231,216,0.9)]" />
-            Digital growth for modern brands
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-3 py-2 text-xs font-medium uppercase tracking-[0.18em] text-stone-600">
+            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+            Available for select projects
           </div>
 
-          <h1 className="max-w-xl text-5xl font-black leading-none tracking-[-0.06em] md:text-6xl lg:text-7xl">
-            Build a <span className="gradient-text">bolder</span> digital presence.
+          <h1 className="max-w-xl text-5xl font-black leading-none tracking-[-0.07em] text-stone-900 md:text-6xl lg:text-7xl">
+            Designer + developer for <span className="text-stone-500">clarity</span> and <span className="text-stone-900">momentum</span>.
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
-            We design high-converting websites, digital experiences, and brand systems that help
-            startups and growing businesses stand out with clarity and confidence.
+          <p className="mt-6 max-w-xl text-lg leading-8 text-stone-600">
+            I design thoughtful digital experiences and build high-performing product interfaces for founders, teams, and ambitious brands.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link href="#contact" className="rounded-full bg-gradient-to-r from-blue to-accent px-6 py-3 font-semibold text-[#08101d] shadow-glow transition hover:brightness-110">
-              Book a Call
+            <Link href="#work" className="rounded-full bg-stone-900 px-6 py-3 font-semibold text-white transition hover:bg-stone-700">
+              View projects
             </Link>
-            <Link href="#work" className="rounded-full border border-white/10 bg-white/[0.04] px-6 py-3 font-semibold text-white transition hover:bg-white/[0.08]">
-              View Work
+            <Link href="#contact" className="rounded-full border border-stone-300 bg-white px-6 py-3 font-semibold text-stone-900 transition hover:border-stone-900">
+              Book a consult
             </Link>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-8 text-slate-300">
+          <div className="mt-10 flex flex-wrap gap-8 text-stone-600">
             {stats.map((stat) => (
               <div key={stat.label}>
-                <div className="text-2xl font-bold text-white">{stat.value}</div>
-                <div className="text-sm">{stat.label}</div>
+                <div className="text-2xl font-bold text-stone-900">{stat.value}</div>
+                <div className="mt-1 text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -57,46 +56,60 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
           className="relative min-h-[520px]"
         >
-          <div className="absolute inset-0 rounded-[28px] border border-white/10 bg-white/[0.03] shadow-glow" />
-          <div className="absolute inset-5 rounded-[22px] border border-white/10 bg-[#0d1529]">
-            <div className="flex gap-2 border-b border-white/10 p-4">
-              <span className="h-2.5 w-2.5 rounded-full bg-white/40" />
-              <span className="h-2.5 w-2.5 rounded-full bg-white/40" />
-              <span className="h-2.5 w-2.5 rounded-full bg-white/40" />
+          <div className="absolute inset-0 rounded-[28px] border border-stone-200 bg-white shadow-[0_28px_70px_rgba(0,0,0,0.08)]" />
+          <div className="absolute inset-5 rounded-[22px] border border-stone-200 bg-stone-100">
+            <div className="flex gap-2 border-b border-stone-200 p-4">
+              <span className="h-2.5 w-2.5 rounded-full bg-stone-400" />
+              <span className="h-2.5 w-2.5 rounded-full bg-stone-400" />
+              <span className="h-2.5 w-2.5 rounded-full bg-stone-400" />
             </div>
 
             <div className="grid h-[calc(100%-56px)] grid-cols-[1.35fr_0.65fr]">
-              <div className="border-r border-white/10 p-5">
-                <div className="h-44 rounded-2xl border border-white/10 bg-gradient-to-br from-blue/20 to-accent/10 p-4">
-                  <div className="h-full w-full rounded-xl bg-[linear-gradient(120deg,rgba(124,156,255,0.25),rgba(110,231,216,0.22))]" style={{ clipPath: 'polygon(0% 72%, 15% 65%, 27% 50%, 38% 58%, 55% 30%, 70% 42%, 100% 8%, 100% 100%, 0% 100%)' }} />
+              <div className="border-r border-stone-200 p-5">
+                <div className="rounded-2xl border border-stone-200 bg-gradient-to-br from-stone-900 via-stone-800 to-stone-700 p-4 text-white">
+                  <div className="mb-5 flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-stone-300">
+                    <span>Focus</span>
+                    <span>Q2</span>
+                  </div>
+                  <div className="h-28 rounded-xl bg-[linear-gradient(135deg,rgba(255,255,255,0.18),rgba(255,255,255,0.02))] p-3">
+                    <div className="flex h-full items-end gap-2">
+                      {[38,58,48,72,62,88,92].map((height, index) => (
+                        <span
+                          key={index}
+                          className="w-full rounded-t-md bg-gradient-to-t from-emerald-400 to-white/80"
+                          style={{ height: `${height}%` }}
+                        />
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
                 <div className="mt-5 grid grid-cols-2 gap-4">
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                    <div className="text-xs text-slate-400">Revenue</div>
-                    <div className="mt-3 text-2xl font-bold">$86k</div>
+                  <div className="rounded-2xl border border-stone-200 bg-white p-4">
+                    <div className="text-xs uppercase tracking-[0.18em] text-stone-500">Reach</div>
+                    <div className="mt-3 text-2xl font-bold text-stone-900">24k</div>
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                    <div className="text-xs text-slate-400">Growth</div>
-                    <div className="mt-3 text-2xl font-bold">+38%</div>
+                  <div className="rounded-2xl border border-stone-200 bg-white p-4">
+                    <div className="text-xs uppercase tracking-[0.18em] text-stone-500">ROI</div>
+                    <div className="mt-3 text-2xl font-bold text-stone-900">+41%</div>
                   </div>
                 </div>
               </div>
 
               <div className="p-5">
-                <h3 className="text-lg font-semibold">Campaign</h3>
+                <h3 className="text-lg font-semibold text-stone-900">Latest</h3>
                 <div className="mt-6 space-y-3">
-                  <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-3">
-                    <span className="h-2.5 w-2.5 rounded-full bg-blue" />
-                    Website Design
+                  <div className="flex items-center gap-3 rounded-xl border border-stone-200 bg-white p-3">
+                    <span className="h-2.5 w-2.5 rounded-full bg-stone-900" />
+                    Product design
                   </div>
-                  <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-3">
-                    <span className="h-2.5 w-2.5 rounded-full bg-accent" />
-                    Social Ads
+                  <div className="flex items-center gap-3 rounded-xl border border-stone-200 bg-white p-3">
+                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                    UX strategy
                   </div>
-                  <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-3">
-                    <span className="h-2.5 w-2.5 rounded-full bg-amber" />
-                    Branding
+                  <div className="flex items-center gap-3 rounded-xl border border-stone-200 bg-white p-3">
+                    <span className="h-2.5 w-2.5 rounded-full bg-amber-500" />
+                    Frontend dev
                   </div>
                 </div>
               </div>
